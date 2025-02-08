@@ -3,6 +3,7 @@ import Image from "../image";
 import { FontAwesome } from "@expo/vector-icons";
 import { BlurView } from "expo-blur";
 import Text from "../text";
+import CarouselItem from "./carousel-item";
 
 type CardProps = {
   property: Property;
@@ -10,10 +11,10 @@ type CardProps = {
 
 const Card = ({ property }: CardProps) => {
   return (
-    <View className="border-b border-gray-200 px-4 py-4 h-[380px] w-auto">
+    <View className="border-b border-gray-200 px-4 py-4 h-[380px] w-auto mt-2">
       <View className="relative">
         <View className="h-[300px]">
-          <Image source={property.images[0]} style={{ borderRadius: 10 }} />
+          <CarouselItem property={property}/>
         </View>
         <View>
           <BlurView
